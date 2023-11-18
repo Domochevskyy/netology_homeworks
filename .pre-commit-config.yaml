@@ -1,0 +1,32 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-yaml
+      - id: check-json
+      - id: check-toml
+      - id: check-xml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-added-large-files
+  - repo: local
+    hooks:
+      - id: black
+        name: black
+        entry: black
+        language: python
+        files: ^.+\.py$
+      - id: ruff
+        name: ruff
+        entry: ruff
+        language: python
+        files: ^.+\.py$
+      - id: isort
+        name: isort
+        entry: isort --profile=black
+        language: python
+      - id: mypy
+        name: mypy
+        entry: mypy
+        language: python
+        files: ^.+\.py$
