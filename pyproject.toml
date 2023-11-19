@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "netology-homeworks"
+version = "0.1.0"
+description = "All netology homeworks"
+authors = ["Nikolay Mednyi <k.medny@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.5"
+black = "^23.11.0"
+isort = "^5.12.0"
+mypy = "^1.7.0"
+pre-commit = "^3.5.0"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.3"
+
+
+
+[tool.ruff]
+line-length = 120
+indent-width = 4
+
+[tool.ruff.lint]
+select = [
+    "ALL"
+]
+ignore = [
+    "ANN101",
+    "ANN102",
+    "INP001",
+
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
